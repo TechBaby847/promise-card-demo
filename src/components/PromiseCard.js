@@ -54,9 +54,9 @@ const PromiseCard = ({setColor, activeColor, setCardInfo, setCardToDisplay}) => 
       <h2>Create your promise card</h2>
       <p>Choose a color</p>
       <div className="color-selector">
-        <button name='yellow' value='yellow' className={`color yellow ${activeColor == 'yellow' && 'active-btn'}`} onClick={changeColor}></button>
-        <button name='pink' value='pink' className={`color pink ${activeColor == 'pink' && 'active-btn'}`} onClick={changeColor}></button>
-        <button name='skyblue' value='skyblue' className={`color skyblue ${activeColor == 'skyblue' && 'active-btn'}`} onClick={changeColor}></button>
+        <button name='yellow' value='yellow' className={`color yellow ${activeColor === 'yellow' && 'active-btn'}`} onClick={changeColor}></button>
+        <button name='pink' value='pink' className={`color pink ${activeColor === 'pink' && 'active-btn'}`} onClick={changeColor}></button>
+        <button name='skyblue' value='skyblue' className={`color skyblue ${activeColor === 'skyblue' && 'active-btn'}`} onClick={changeColor}></button>
       </div>
       <div className={`form-input`}>
         <input type="text" name='text1' maxLength="25" placeholder="write item name" value={text.text1} onChange={handleTextChange} autoFocus={true}/>

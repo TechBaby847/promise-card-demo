@@ -3,8 +3,6 @@ import whatsapp from '../images/whatsapp.svg';
 import facebook from '../images/facebook.svg';
 import twitter from '../images/twitter.svg';
 import download from '../images/download.svg';
-// import {saveAs} from 'file-saver';
-// import { useState } from 'react';
 
 const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
