@@ -1,7 +1,4 @@
 import React from "react";
-// import whatsapp from '../images/whatsapp.svg';
-// import facebook from '../images/facebook.svg';
-// import twitter from '../images/twitter.svg';
 import download from "../images/download.svg";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { WhatsappShareButton, WhatsappIcon } from "react-share";
@@ -9,23 +6,34 @@ import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
 
-const PNG_FILE_URL = "https://mywishlists.netlify.app/file_png.png";
+function toDataURL(src) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.crossOrigin = "anonymous";
+    image.src = src;
+    image.onload = function () {
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      canvas.height = this.naturalHeight;
+      canvas.width = this.naturalWidth;
+      context.drawImage(this, 0, 0);
+      resolve(canvas.toDataURL("image/png"));
+    };
+    image.onerror = () => reject("Could not load image");
+  });
+}
+
+// const PNG_FILE_URL = "https://mywishlists.netlify.app/file_png.png";
 const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
 
-  const downloadFileAtURL = (url) => {
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const blobURL = window.URL.createObjectURL(new Blob([blob]));
-        const fileName = url.split("/").pop();
-        const aTag = document.createElement("a");
-        aTag.href = blobURL;
-        aTag.setAttribute("download", fileName);
-        document.body.appendChild(aTag);
-        aTag.click();
-        aTag.remove();
-      });
+  const handleCaptureClick = async () => {
+    const imageCardDownload = document.getElementById(`genCard`);
+    if (!imageCardDownload) return;
+
+    const canvas = await html2canvas(imageCardDownload);
+    const dataURL = canvas.toDataURL("image/png");
+    downloadjs(dataURL, "download.png", "image/png");
   };
   return (
     <div onClick={onClose} className="overlay">
@@ -46,12 +54,13 @@ const DownloadShare = ({ open, onClose }) => {
         </div>
 
         <div className="share-btn">
-          <span
-            onClick={() => {
-              downloadFileAtURL(PNG_FILE_URL);
-            }}
-          >
-            <img src={download} alt="save file icon" />
+          <span>
+            <img
+              src={download}
+              alt="save file icon"
+              id="fileDownload"
+              onClick={handleCaptureClick}
+            />
             <p>Save image</p>
           </span>
           <span>

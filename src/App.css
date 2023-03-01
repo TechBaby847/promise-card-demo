@@ -1,5 +1,5 @@
 .app {
-  background-color: #282c34;
+  background-color: #707070;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -311,8 +311,8 @@ cursor: pointer;
 }
 
 .share-btn img {
-height: 32px;
-width: 32px;
+height: 35px;
+width: 35px;
 }
 
 .share-btn p {
