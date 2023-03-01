@@ -44,7 +44,7 @@ function App() {
           />
         )}
 
-        {cardToDisplay.generatedcard && <GeneratedCard cardInfo={cardInfo} />}
+        {cardToDisplay.generatedcard && <GeneratedCard cardInfo={cardInfo} color={color} />}
       </div>
     </div>
   );

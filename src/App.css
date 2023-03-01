@@ -317,5 +317,11 @@ width: 35px;
 
 .share-btn p {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
+  }
+
+#genCard {
+    padding: 10px;
+    margin: 10px;
+    /* background-color: #FEDF58; */
   }

@@ -23,7 +23,6 @@ function toDataURL(src) {
   });
 }
 
-// const PNG_FILE_URL = "https://mywishlists.netlify.app/file_png.png";
 const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
 
@@ -65,8 +64,8 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <FacebookShareButton
-              url={"https://mywishlists.netlify.app/"}
-              quote={"An awesome promise card"}
+              url={"https://promise-card-7ydg.onrender.com"}
+              quote={"A promise card"}
               hashtag={"#mywishlist"}
             >
               <FacebookIcon size={32} round />
@@ -75,8 +74,8 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <WhatsappShareButton
-              url={"https://mywishlists.netlify.app/"}
-              quote={"An awesome promise card"}
+              url={"https://promise-card-7ydg.onrender.com"}
+              quote={"A promise card"}
               hashtag={"#mywishlist"}
             >
               <WhatsappIcon size={32} round />
@@ -85,8 +84,8 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <TwitterShareButton
-              url={"https://mywishlists.netlify.app/"}
-              quote={"An awesome promise card"}
+              url={"https://promise-card-7ydg.onrender.com"}
+              quote={"A promise card"}
               hashtag={"#mywishlist"}
             >
               <TwitterIcon size={32} round />
