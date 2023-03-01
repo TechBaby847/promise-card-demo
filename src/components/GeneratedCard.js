@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import DownloadShareModal from './DownloadShareModal';
-// import PromiseCard from './PromiseCard';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PromiseCard from './PromiseCard';
 
 const GeneratedCard = ({cardInfo, color}) => {
   const [openModal, setOpenModal] = useState(false)
@@ -9,13 +9,13 @@ const GeneratedCard = ({cardInfo, color}) => {
   return (
     <div>
       <div className={`card`}>
-        <div id={`genCard`}
-          style=
-          {{
+        <div
+          id={`genCard`}
+          style={{
             backgroundColor: `${color.activeColor}`,
           }}
-          >
-            <h2>{cardInfo.name + `'s`} Promise Card</h2>
+        >
+          <h2>{cardInfo.name + `'s`} Promise Card</h2>
           <p>
             Things I want{" "}
             <span
@@ -41,23 +41,25 @@ const GeneratedCard = ({cardInfo, color}) => {
           </div>
         </div>
 
-        {/* <div className='linkwrap'>
-            <Link className='create-link' onClick={PromiseCard}>
-              <p>
-                Create your own promisecard.com.ng
-              </p>
-            </Link>
-        </div> */}
+        <div className="linkwrap">
+          <Link to className="create-link" onClick={PromiseCard}>
+            <p>Create your own promisecard.com.ng</p>
+          </Link>
+        </div>
 
         <div className="share">
-          <div className="gen-btn socialShare">
+          <div className="socialShare">
             <button onClick={() => setOpenModal(true)}>
               Share with friends
             </button>
           </div>
-          <div className="gen-btn createCard">
-            <button>Create new card</button>
-          </div>
+
+          <Link to onClick={PromiseCard}>
+            <div className="createCard" onClick={PromiseCard}>
+              <button>Create new card</button>
+            </div>
+          </Link>
+
         </div>
       </div>
       <DownloadShareModal
@@ -69,5 +71,3 @@ const GeneratedCard = ({cardInfo, color}) => {
 }
 
 export default GeneratedCard;
-
-// onClick={() => setOpenModal(true)

@@ -193,15 +193,17 @@ border-radius: 16px 16px 0px 0px;
 background-color: #000;
 margin-right: 2rem;
 }
+
 .socialShare button {
 background-color: transparent;
 color: #fff;
 cursor: pointer;
+border: none;
 }
 
 .socialShare,
 .createCard {
-  padding: 14px;
+padding: 14px;
 font-size: 14px;
 border-radius: 32px;
 cursor: pointer;
@@ -229,13 +231,14 @@ border: 1px solid #000;
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 279.67px;
+    width: 280.67px;
     height: 37.67px;
+    margin-left: 1.9rem;
     font-weight: 400;
     font-size: 13.5417px;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    top: 500px;
+    top: 525px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 21.6667px;
   }
@@ -264,11 +267,12 @@ box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 }
+
 .modalwrapper{
   width: 400px;
-  height: 340px;
+  height: 270px;
   position: absolute;
-  top: 350px;
+  top: 420px;
   position: relative;
   background-color: #fff;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
