@@ -270,9 +270,9 @@ border-top-right-radius: 15px;
 
 .modalwrapper{
   width: 400px;
-  height: 270px;
+  height: 290px;
   position: absolute;
-  top: 420px;
+  top: 400px;
   position: relative;
   background-color: #fff;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);

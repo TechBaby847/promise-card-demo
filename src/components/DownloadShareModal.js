@@ -34,6 +34,9 @@ const DownloadShare = ({ open, onClose }) => {
     const dataURL = canvas.toDataURL("image/png");
     downloadjs(dataURL, "download.png", "image/png");
   };
+
+   const imageCardDownload = document.getElementById(`genCard`);
+
   return (
     <div onClick={onClose} className="overlay">
       <div
@@ -64,9 +67,9 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <FacebookShareButton
-              url={"https://promise-card-7ydg.onrender.com"}
-              quote={"A promise card"}
-              hashtag={"#mywishlist"}
+              url={imageCardDownload}
+              quote={`genCard`}
+              hashtag={"#mypromisecard"}
             >
               <FacebookIcon size={32} round />
             </FacebookShareButton>
@@ -75,8 +78,8 @@ const DownloadShare = ({ open, onClose }) => {
           <span>
             <WhatsappShareButton
               url={"https://promise-card-7ydg.onrender.com"}
-              quote={"A promise card"}
-              hashtag={"#mywishlist"}
+              quote={`genCard`}
+              hashtag={"#mypromisecard"}
             >
               <WhatsappIcon size={32} round />
             </WhatsappShareButton>
@@ -85,8 +88,8 @@ const DownloadShare = ({ open, onClose }) => {
           <span>
             <TwitterShareButton
               url={"https://promise-card-7ydg.onrender.com"}
-              quote={"A promise card"}
-              hashtag={"#mywishlist"}
+              quote={`genCard`}
+              hashtag={"#mypromisecard"}
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>
