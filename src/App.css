@@ -10,7 +10,7 @@
 }
 .app-content {
 width: 400px;
-height: 690px;
+height: 750px;
 position: relative;
 margin: auto;
 text-align: center;
@@ -183,7 +183,7 @@ position: absolute;
 width: 400px;
 height: 120px;
 left: 0px;
-top: 570px;
+top: 630px;
 bottom: 0;
 background: #FFFFFF;
 border-radius: 16px 16px 0px 0px;
@@ -238,7 +238,7 @@ border: 1px solid #000;
     font-size: 13.5417px;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    top: 525px;
+    top: 570px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 21.6667px;
   }
@@ -253,7 +253,7 @@ justify-content: center;
 .overlay {
   background-color: rgba(0, 0, 0, 0.9);
   width: 400px;
-  height: 690px;
+  height: 750px;
   position: relative;
   z-index: 2;
 }
@@ -272,7 +272,7 @@ border-top-right-radius: 15px;
   width: 400px;
   height: 290px;
   position: absolute;
-  top: 400px;
+  top: 460px;
   position: relative;
   background-color: #fff;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
