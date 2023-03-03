@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UserInfo = ({ setCardInfo, setCardToDisplay }) => {
+const UserInfo = ({ setCardInfo, setCardToDisplay, color, cardInfo, setRes }) => {
   let [emptyText, setEmptyText] = useState(false);
 
   let [userDetails, setUserDetails] = useState({
@@ -12,7 +12,16 @@ const UserInfo = ({ setCardInfo, setCardToDisplay }) => {
     setUserDetails((prev) => ({ ...prev, [name]: value }));
   };
 
-  let handleSubmit = () => {
+  const userData = {
+    name: userDetails.name,
+    email: userDetails.email,
+    color: color.activeColor,
+    cardItems: cardInfo.text,
+  };
+
+  console.log(userData);
+
+  let handleSubmit = async () => {
     if (userDetails.name === "" || userDetails.email === "") {
       setEmptyText(true);
       return;
@@ -23,11 +32,34 @@ const UserInfo = ({ setCardInfo, setCardToDisplay }) => {
       name: userDetails.name,
       email: userDetails.email,
     }));
-    setCardToDisplay({
-      promiseCard: false,
-      userInfo: false,
-      generatedcard: true,
-    });
+    
+
+    try {
+      //resolves fetch promise
+      const res = await fetch(
+        "https://promise-card-api.onrender.com/api/create-card",
+        {
+          method: "POST",
+          body: JSON.stringify(userData),
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      );
+      //resolves res.json()'s promise
+      const jsonResponse = await res.json();
+      setRes(jsonResponse);
+      setCardToDisplay({
+        promiseCard: false,
+        userInfo: false,
+        generatedcard: true,
+      });
+
+      // previews response in the console
+      console.log(jsonResponse);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -42,7 +74,7 @@ const UserInfo = ({ setCardInfo, setCardToDisplay }) => {
           <input
             type="text"
             name="name"
-            placeholder="eg. Bode Rice"
+            placeholder="eg. Bode Thomas"
             value={userDetails.name}
             required={true}
             onChange={updateUserDetails}
@@ -54,7 +86,7 @@ const UserInfo = ({ setCardInfo, setCardToDisplay }) => {
           <input
             type="email"
             name="email"
-            placeholder="youremail@address.com"
+            placeholder="bodethomas@address.com"
             value={userDetails.email}
             required={true}
             onChange={updateUserDetails}
