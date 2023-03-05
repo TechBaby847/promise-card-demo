@@ -23,7 +23,7 @@ const Cards = () => {
             );
             //resolves res.json()'s promise
             const jsonData = await res.json();
-            if (jsonData.status == "fail"){
+            if (jsonData.status === "fail"){
                 return
             }
 
@@ -45,7 +45,7 @@ const Cards = () => {
 
   return (
     <div>
-         {response != "" ? 
+         {response !== "" ? 
          <div id={`generatedScreen`}
          style={{
           width: "400px",
