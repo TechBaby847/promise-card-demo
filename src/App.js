@@ -65,13 +65,11 @@ function App() {
           }
         />
 
-        <Route
-          path="/cards/:cardId"
-          element={<Cards />}
-        />
+        <Route path="/cards/:cardId" element={<Cards />} />
       </Routes>
     </>
   );
 }
 
 export default App;
+

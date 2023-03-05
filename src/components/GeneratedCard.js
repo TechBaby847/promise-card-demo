@@ -61,10 +61,10 @@ const GeneratedCard = ({cardInfo, color}) => {
               <button>Create new card</button>
             </div>
           </Link>
-
         </div>
       </div>
       <DownloadShareModal
+        cardInfo={cardInfo}
         open={openModal}
         onClose={() => setOpenModal(false)}
       />

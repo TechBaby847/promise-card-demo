@@ -12,12 +12,15 @@ const Cards = () => {
     const getCardData = async () => {
         try {
             //resolves fetch promise
-            const res = await fetch(`https://promise-card-api.onrender.com/api/get-card/${cardId}`, {
-            method: "GET",
-            headers: {
-                "content-type": "application/json",
-            },
-            });
+            const res = await fetch(
+              `https://promise-card-api.onrender.com/api/get-card/${cardId}`,
+              {
+                method: "GET",
+                headers: {
+                  "content-type": "application/json",
+                },
+              }
+            );
             //resolves res.json()'s promise
             const jsonData = await res.json();
             if (jsonData.status == "fail"){
@@ -87,4 +90,5 @@ const Cards = () => {
 
 }
 
-export default Cards
+export default Cards;
+
