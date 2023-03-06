@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import download from "../images/download.svg";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-import Cards from '../Cards';
 
 function toDataURL(src) {
   return new Promise((resolve, reject) => {
