@@ -5,7 +5,6 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-// import { useParams } from 'react-router-dom';
 import Cards from '../Cards';
 
 function toDataURL(src) {
@@ -30,7 +29,6 @@ console.log(toDataURL);
 const DownloadShare = ({ open, onClose, cardInfo }) => {
   const [cardDetails, setCardDetails] = useState("");
   const [showCard, setShowCard] = useState(false);
-  // const { cardId } = useParams();
 
   // console.log(setShowCard);
   // console.log(setCardDetails);
@@ -45,11 +43,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
     downloadjs(dataURL, "download.png", "image/png");
   };
 
-  // useEffect(() => {
-
-  // }, []);
-
-  // const imageCardDownload = document.getElementById(`genCard`);
 
   return (
     <>
@@ -83,7 +76,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               </span>
               <span>
                 <FacebookShareButton
-                  url={`https://promisecard.netlify.app//cards/${cardInfo.card._id}`}
+                  url={`https://promisecard.netlify.app/cards/${cardInfo.card._id}`}
                   quote={`These are the things I want`}
                   hashtag={"#mypromisecard"}
                 >
@@ -93,7 +86,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               </span>
               <span>
                 <WhatsappShareButton
-                  url={`https://promisecard.netlify.app//cards/${cardInfo.card._id}`}
+                  url={`https://promisecard.netlify.app/cards/${cardInfo.card._id}`}
                   quote={`These are the things I want`}
                   hashtag={"#mypromisecard"}
                 >
@@ -103,7 +96,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               </span>
               <span>
                 <TwitterShareButton
-                  url={`https://promisecard.netlify.app//cards/${cardInfo.card._id}`}
+                  url={`https://promisecard.netlify.app/cards/${cardInfo.card._id}`}
                   quote={`These are the things I want`}
                   hashtag={"#mypromisecard"}
                 >
