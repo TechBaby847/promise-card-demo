@@ -32,8 +32,8 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
   const [showCard, setShowCard] = useState(false);
   // const { cardId } = useParams();
 
-  console.log(setShowCard);
-  console.log(setCardDetails);
+  // console.log(setShowCard);
+  // console.log(setCardDetails);
   if (!open) return null;
 
   const handleCaptureClick = async () => {
@@ -83,7 +83,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               </span>
               <span>
                 <FacebookShareButton
-                  url={`https://promise-card-7ydg.onrender.com/cards/${cardInfo.card._id}`}
+                  url={`https://promisecard.netlify.app//cards/${cardInfo.card._id}`}
                   quote={`These are the things I want`}
                   hashtag={"#mypromisecard"}
                 >
@@ -93,7 +93,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               </span>
               <span>
                 <WhatsappShareButton
-                  url={`https://promise-card-7ydg.onrender.com/cards/${cardInfo.card._id}`}
+                  url={`https://promisecard.netlify.app//cards/${cardInfo.card._id}`}
                   quote={`These are the things I want`}
                   hashtag={"#mypromisecard"}
                 >
@@ -103,7 +103,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               </span>
               <span>
                 <TwitterShareButton
-                  url={`https://promise-card-7ydg.onrender.com/cards/${cardInfo.card._id}`}
+                  url={`https://promisecard.netlify.app//cards/${cardInfo.card._id}`}
                   quote={`These are the things I want`}
                   hashtag={"#mypromisecard"}
                 >

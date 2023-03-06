@@ -40,7 +40,7 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
-  });
+  }, []);
 
 
   return (
