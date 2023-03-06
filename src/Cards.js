@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams} from 'react-router-dom'
 import "./App.css";
-import MoonLoader from "react-spinners/MoonLoader";
+// import MoonLoader from "react-spinners/MoonLoader";
 
 
 // import { useParams } from "react-router-dom";
@@ -9,12 +9,12 @@ import MoonLoader from "react-spinners/MoonLoader";
 const Cards = () => {
     const { cardId } = useParams(); 
     const [response, setResponse] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     // console.log( "crd", cardId);
 
     const getCardData = async () => {
         try {
-            setIsLoading(true);
+            // setIsLoading(true);
 
             //Then resolve fetch promise
             const res = await fetch(
@@ -34,14 +34,14 @@ const Cards = () => {
 
            
             setResponse(jsonData)
-            setIsLoading(false);
+            // setIsLoading(false);
         
             // previews response in the console
             // console.log("theresp",jsonData);
 
         } catch (error) {
             console.error(error);
-            setIsLoading(false);
+            // setIsLoading(false);
         }
 }
      useEffect(() => {
