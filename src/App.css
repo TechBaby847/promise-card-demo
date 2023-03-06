@@ -366,7 +366,7 @@ width: 35px;
     display: flex;
     justify-content: center;
     position: fixed;
-    margin-left: 11.5%;
+    /* margin-left: 11.5%; */
     top: -40px;
   }
   .linkWrap .create-link{
