@@ -89,6 +89,15 @@ padding: 4px;
 width: 100%;
 }
 
+.cardInput {
+height: 50px;
+outline: none;
+border: 1px solid black;
+background-color: transparent;
+padding: 4px;
+width: 100%;
+}
+
 .gen-btn {
 padding: 6px 0;
 }
