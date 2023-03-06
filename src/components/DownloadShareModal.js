@@ -25,11 +25,15 @@ function toDataURL(src) {
   });
 }
 
+console.log(toDataURL);
+
 const DownloadShare = ({ open, onClose, cardInfo }) => {
   const [cardDetails, setCardDetails] = useState("");
   const [showCard, setShowCard] = useState(false);
   // const { cardId } = useParams();
 
+  console.log(setShowCard);
+  console.log(setCardDetails);
   if (!open) return null;
 
   const handleCaptureClick = async () => {
