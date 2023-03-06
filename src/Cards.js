@@ -66,7 +66,7 @@ const Cards = () => {
       ) : response !== "" ? (
         <div
           className="caardsContent"
-          id={`generatedScreen`}
+          id={`genCard`}
           style={{
             backgroundColor: `${response.color}`,
           }}
@@ -84,7 +84,7 @@ const Cards = () => {
               </>
             ))}
             <div className="linkWrap">
-              <Link to="https://caard.netlify.app" className="create-link">
+              <Link to="https://promisecard.netlify.app" className="create-link">
                 <p>Create your own Promisecard.com.ng</p>
               </Link>
             </div>
@@ -109,4 +109,3 @@ const Cards = () => {
 }
 
 export default Cards;
-
