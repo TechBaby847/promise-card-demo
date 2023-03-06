@@ -27,11 +27,6 @@ function toDataURL(src) {
 console.log(toDataURL);
 
 const DownloadShare = ({ open, onClose, cardInfo }) => {
-  const [cardDetails, setCardDetails] = useState("");
-  const [showCard, setShowCard] = useState(false);
-
-  // console.log(setShowCard);
-  // console.log(setCardDetails);
   if (!open) return null;
 
   const handleCaptureClick = async () => {
@@ -46,7 +41,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
 
   return (
     <>
-      {!showCard ? (
         <div onClick={onClose} className="overlay">
           <div
             onClick={(e) => {
@@ -107,9 +101,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
             </div>
           </div>
         </div>
-      ) : (
-        <Cards cardDetails={cardDetails} />
-      )}
     </>
   );
 };
