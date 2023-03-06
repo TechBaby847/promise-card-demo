@@ -52,7 +52,7 @@ const Cards = () => {
 
   return (
     <div className="caards">
-      {isLoading ? (
+      {/* isLoading ? (
         <div
           style={{
             display: "flex",
@@ -63,7 +63,8 @@ const Cards = () => {
         >
           <MoonLoader color="#a080a0" />
         </div>
-      ) : response !== "" ? (
+      ) :  */}
+      {response !== "" ? (
         <div
           className="caardsContent"
           id={`genCard`}
@@ -84,7 +85,10 @@ const Cards = () => {
               </>
             ))}
             <div className="linkWrap">
-              <Link to="https://promisecard.netlify.app" className="create-link">
+              <Link
+                to="https://promisecard.netlify.app"
+                className="create-link"
+              >
                 <p>Create your own Promisecard.com.ng</p>
               </Link>
             </div>
