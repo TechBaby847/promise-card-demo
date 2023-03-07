@@ -4,17 +4,14 @@ import "./App.css";
 // import MoonLoader from "react-spinners/MoonLoader";
 
 
-// import { useParams } from "react-router-dom";
-
 const Cards = () => {
     const { cardId } = useParams(); 
     const [response, setResponse] = useState("");
-    // const [isLoading, setIsLoading] = useState(false);
-    // console.log( "crd", cardId);
+    const [isLoading, setIsLoading] = useState(false);
 
     const getCardData = async () => {
         try {
-            // setIsLoading(true);
+            setIsLoading(true);
 
             //Then resolve fetch promise
             const res = await fetch(
@@ -34,14 +31,13 @@ const Cards = () => {
 
            
             setResponse(jsonData)
-            // setIsLoading(false);
+            setIsLoading(false);
         
             // previews response in the console
-            // console.log("theresp",jsonData);
 
         } catch (error) {
             console.error(error);
-            // setIsLoading(false);
+            setIsLoading(false);
         }
 }
      useEffect(() => {
@@ -52,19 +48,19 @@ const Cards = () => {
 
   return (
     <div className="caards">
-      {/* isLoading ? (
+      {isLoading ? (
         <div
           style={{
             display: "flex",
             justifyContent: "center",
+            fontFamily: "fantasy",
             position: "absolute",
             top: "40%",
           }}
         >
-          <MoonLoader color="#a080a0" />
+          <p>Please wait ...</p>
         </div>
-      ) :  */}
-      {response !== "" ? (
+      ) : response !== "" ? (
         <div
           className="caardsContent"
           id={`genCard`}
