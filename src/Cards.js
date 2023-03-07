@@ -11,30 +11,29 @@ const Cards = () => {
 
     const getCardData = async () => {
         try {
-            setIsLoading(true);
+          setIsLoading(true);
 
-            //Then resolve fetch promise
-            const res = await fetch(
-              `https://promise-card-api.onrender.com/api/get-card/${cardId}`,
-              {
-                method: "GET",
-                headers: {
-                  "content-type": "application/json",
-                },
-              }
-            );
-            //resolves res.json()'s promise
-            const jsonData = await res.json();
-            if (jsonData.status === "fail"){
-                return
+          //Then resolve fetch promise
+          const res = await fetch(
+            `https://promise-card-api.onrender.com/api/get-card/${cardId}`,
+            {
+              method: "GET",
+              headers: {
+                "content-type": "application/json",
+              },
             }
+          );
+          //resolves res.json()'s promise
+          const jsonData = await res.json();
+          // eslint-disable-next-line
+          if (jsonData.status == "fail") {
+            return;
+          }
 
-           
-            setResponse(jsonData)
-            setIsLoading(false);
-        
-            // previews response in the console
+          setResponse(jsonData);
+          setIsLoading(false);
 
+          // previews response in the console
         } catch (error) {
             console.error(error);
             setIsLoading(false);
@@ -60,7 +59,8 @@ const Cards = () => {
         >
           <p>Please wait ...</p>
         </div>
-      ) : response !== "" ? (
+      ) : // eslint-disable-next-line
+      response != "" ? (
         <div
           className="caardsContent"
           id={`genCard`}
